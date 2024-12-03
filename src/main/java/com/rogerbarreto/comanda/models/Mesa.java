@@ -1,10 +1,14 @@
 package com.rogerbarreto.comanda.models;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,12 +22,15 @@ public class Mesa {
     private long mes_id;
 
     @Column(name = "mes_numero", nullable = false)
-    private int mes_numero;
+    private Integer mes_numero;
 
     @Column(name = "mes_status", nullable = false)
     private boolean mes_status;
 
 
+    @OneToMany(mappedBy = "mesa", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Comanda> comandas;
+    
     public Mesa() {
     }
 
