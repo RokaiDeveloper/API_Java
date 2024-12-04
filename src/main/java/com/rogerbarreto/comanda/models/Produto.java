@@ -10,9 +10,8 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name = "TABLE_NAME")
+@Table(name = "produto")
 public class Produto {
-    public static final String TABLE_NAME = "produto";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

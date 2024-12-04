@@ -8,9 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "TABLE_NAME")
+@Table(name = "mesa")
 public class Mesa {
-    public static final String TABLE_NAME = "mesa";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
