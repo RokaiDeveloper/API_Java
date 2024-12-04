@@ -22,8 +22,6 @@ public class ItemComanda {
     private long ico_id;
 
     @Column(name = "ico_com_id", nullable = false)
-    @ManyToOne
-    @JoinColumn(name = "ico_com_id", nullable = false)
     private Comanda ico_com_id;
 
     @Column(name = "ico_pro_codigo")

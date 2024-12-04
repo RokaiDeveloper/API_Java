@@ -21,8 +21,6 @@ public class Comanda {
     @Column(name = "com_id", unique = true)
     private long com_id;
 
-    @ManyToOne
-    @JoinColumn(name = "com_mes_id")
     @Column(name = "com_mes_id", nullable = false)
     private Mesa com_mes_id;
 

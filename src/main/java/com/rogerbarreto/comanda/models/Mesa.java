@@ -27,10 +27,6 @@ public class Mesa {
     @Column(name = "mes_status", nullable = false)
     private boolean mes_status;
 
-
-    @OneToMany(mappedBy = "mesa", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private List<Comanda> comandas;
-    
     public Mesa() {
     }
 
