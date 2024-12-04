@@ -33,7 +33,7 @@ public class Comanda {
     }
 
 
-    public Comanda(long com_id, Mesa com_mes_id, boolean com_status, LocalDateTime com_datahora) {
+    public Comanda(long com_id, long com_mes_id, boolean com_status, LocalDateTime com_datahora) {
         this.com_id = com_id;
         this.com_mes_id = com_mes_id;
         this.com_status = com_status;
@@ -49,11 +49,11 @@ public class Comanda {
         this.com_id = com_id;
     }
 
-    public Mesa getCom_mes_id() {
+    public long getCom_mes_id() {
         return this.com_mes_id;
     }
 
-    public void setCom_mes_id(Mesa com_mes_id) {
+    public void setCom_mes_id(long com_mes_id) {
         this.com_mes_id = com_mes_id;
     }
 

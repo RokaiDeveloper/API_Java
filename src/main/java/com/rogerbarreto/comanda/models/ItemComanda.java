@@ -42,7 +42,7 @@ public class ItemComanda {
     }
 
 
-    public ItemComanda(long ico_id, Comanda ico_com_id, long ico_pro_codigo, double ico_quantidade, double ico_valor, String ico_und, LocalDateTime ico_datahora) {
+    public ItemComanda(long ico_id, long ico_com_id, long ico_pro_codigo, double ico_quantidade, double ico_valor, String ico_und, LocalDateTime ico_datahora) {
         this.ico_id = ico_id;
         this.ico_com_id = ico_com_id;
         this.ico_pro_codigo = ico_pro_codigo;
@@ -61,11 +61,11 @@ public class ItemComanda {
         this.ico_id = ico_id;
     }
 
-    public Comanda getIco_com_id() {
+    public long getIco_com_id() {
         return this.ico_com_id;
     }
 
-    public void setIco_com_id(Comanda ico_com_id) {
+    public void setIco_com_id(long ico_com_id) {
         this.ico_com_id = ico_com_id;
     }
 
