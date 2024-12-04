@@ -1,7 +1,7 @@
 package com.rogerbarreto.comanda.models;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,7 +27,7 @@ public class Mesa {
     private boolean mes_status;
 
     @OneToMany(mappedBy = "com_mes_id")
-    private List<Comanda> comandas = new ArrayList<>();
+    private ArrayList<Comanda> comandas = new ArrayList<>();
 
     public Mesa() {
     }

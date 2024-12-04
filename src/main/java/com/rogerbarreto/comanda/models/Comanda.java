@@ -2,7 +2,6 @@ package com.rogerbarreto.comanda.models;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,7 +34,7 @@ public class Comanda {
 
 
     @OneToMany(mappedBy = "ico_com_id")
-    private List<ItemComanda> itemComandas = new ArrayList<>();
+    private ArrayList<ItemComanda> itemComandas = new ArrayList<>();
 
     public Comanda() {
     }
