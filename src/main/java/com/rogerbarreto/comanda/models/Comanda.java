@@ -20,7 +20,7 @@ public class Comanda {
     private long com_id;
 
     @Column(name = "com_mes_id", nullable = false)
-    private Mesa com_mes_id;
+    private long com_mes_id;
 
     @Column(name = "com_status", nullable = false)
     private boolean com_status;
