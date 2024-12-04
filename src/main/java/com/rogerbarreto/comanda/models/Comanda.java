@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,8 +20,9 @@ public class Comanda {
     @Column(name = "com_id", unique = true)
     private long com_id;
 
-    @Column(name = "com_mes_id", nullable = false)
-    private long com_mes_id;
+    @ManyToOne
+    @JoinColumn(name = "com_mes_id")
+    private Mesa com_mes_id;
 
     @Column(name = "com_status", nullable = false)
     private boolean com_status;
@@ -32,7 +35,7 @@ public class Comanda {
     }
 
 
-    public Comanda(long com_id, long com_mes_id, boolean com_status, LocalDateTime com_datahora) {
+    public Comanda(long com_id, Mesa com_mes_id, boolean com_status, LocalDateTime com_datahora) {
         this.com_id = com_id;
         this.com_mes_id = com_mes_id;
         this.com_status = com_status;
@@ -48,11 +51,11 @@ public class Comanda {
         this.com_id = com_id;
     }
 
-    public long getCom_mes_id() {
+    public Mesa getCom_mes_id() {
         return this.com_mes_id;
     }
 
-    public void setCom_mes_id(long com_mes_id) {
+    public void setCom_mes_id(Mesa com_mes_id) {
         this.com_mes_id = com_mes_id;
     }
 

@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,8 +20,10 @@ public class ItemComanda {
     @Column(name = "ico_id", unique = true)
     private long ico_id;
 
-    @Column(name = "ico_com_id", nullable = false)
-    private long ico_com_id;
+    @ManyToOne
+
+    @JoinColumn(name = "ico_com_id")
+    private Comanda ico_com_id;
 
     @Column(name = "ico_pro_codigo")
     private long ico_pro_codigo;
@@ -41,7 +45,7 @@ public class ItemComanda {
     }
 
 
-    public ItemComanda(long ico_id, long ico_com_id, long ico_pro_codigo, double ico_quantidade, double ico_valor, String ico_und, LocalDateTime ico_datahora) {
+    public ItemComanda(long ico_id, Comanda ico_com_id, long ico_pro_codigo, double ico_quantidade, double ico_valor, String ico_und, LocalDateTime ico_datahora) {
         this.ico_id = ico_id;
         this.ico_com_id = ico_com_id;
         this.ico_pro_codigo = ico_pro_codigo;
@@ -60,11 +64,11 @@ public class ItemComanda {
         this.ico_id = ico_id;
     }
 
-    public long getIco_com_id() {
+    public Comanda getIco_com_id() {
         return this.ico_com_id;
     }
 
-    public void setIco_com_id(long ico_com_id) {
+    public void setIco_com_id(Comanda ico_com_id) {
         this.ico_com_id = ico_com_id;
     }
 
