@@ -13,7 +13,7 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    public Produto findProdutobyId(Long id)
+    public Produto findProdutoById(Long id)
     {
         Optional<Produto> produto = this.produtoRepository.findById(id);
         return produto.orElseThrow(()-> new RuntimeException(
@@ -31,7 +31,7 @@ public class ProdutoService {
     @Transactional
     public Produto updateProduto(Produto obj)
     {
-        Produto newObj = findProdutobyId(obj.getPro_id());
+        Produto newObj = findProdutoById(obj.getPro_id());
         newObj.setPro_descricao(obj.getPro_descricao());
         newObj.setPro_und(obj.getPro_und());
         newObj.setPro_valor(obj.getPro_valor());
@@ -40,7 +40,7 @@ public class ProdutoService {
 
     public void deleteProduto(Long id)
     {
-        finProdutobyId(id);
+        findProdutoById(id);
         try 
         {
             this.produtoRepository.deleteById(id);
