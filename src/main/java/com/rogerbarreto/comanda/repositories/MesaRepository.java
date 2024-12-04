@@ -5,10 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.rogerbarreto.comanda.models.Mesa;
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
 public interface MesaRepository extends JpaRepository<Mesa,Long>{
     
-    List<Mesa> findByMes_numero(int mes_numero);
+    Optional<Mesa> findByMes_numero(int mes_numero);
 }
