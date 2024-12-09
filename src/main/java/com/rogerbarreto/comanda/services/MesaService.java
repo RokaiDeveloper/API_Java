@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rogerbarreto.comanda.models.Mesa;
 import com.rogerbarreto.comanda.repositories.MesaRepository;
@@ -29,5 +30,31 @@ public class MesaService {
         ));
     }
     
+    @Transactional
+    public Mesa createMesa(Mesa obj)
+    {
+        obj = this.mesaRepository.save(obj);
+        return obj;
+    }
+
+    @Transactional
+    public Mesa updatMesa(Mesa obj)
+    {
+        Mesa newObj = findMesaById(obj.getMes_id());
+        newObj.setMes_numero(obj.getMes_numero());
+        newObj.setMes_status(obj.getMes_status());
+        return this.mesaRepository.save(newObj);
+    }
+
+    public void deleteMesa(Long id)
+    {
+        findMesaById(id);
+        try
+        {
+            this.mesaRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new RuntimeException("Não foi possivel realizar o delete");
+        }
+    }
 
 }
