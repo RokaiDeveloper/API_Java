@@ -3,11 +3,13 @@ package com.rogerbarreto.comanda.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rogerbarreto.comanda.models.Comanda;
 import com.rogerbarreto.comanda.repositories.ComandaRepository;
 
+@Service
 public class ComandaService {
     
     @Autowired
