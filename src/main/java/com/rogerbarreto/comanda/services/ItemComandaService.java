@@ -15,7 +15,7 @@ public class ItemComandaService {
     @Autowired
     private ItemComandaRepository itemComandaRepository;
 
-    public ItemComanda findItemComandaByProCodigo(Long pro_codigo)
+    public ItemComanda findByIcoProCodigo(Long pro_codigo)
     {
         Optional<ItemComanda> comanda = this.itemComandaRepository.findByIco_pro_codigo(pro_codigo);
         return comanda.orElseThrow(() -> new RuntimeException("Não foi possivel encontrar o item da comanda pelo código de produto : " + pro_codigo));
