@@ -24,7 +24,7 @@ public class MesaService {
     }
 
     public Mesa findMesaByNumero(int numero) {
-        Optional<Mesa> mesa = this.mesaRepository.findByMes_numero(numero);
+        Optional<Mesa> mesa = this.mesaRepository.findByMesNumero(numero);
         return mesa.orElseThrow(() -> new RuntimeException(
             "Mesa não encontrada pelo numero: " + numero
         ));

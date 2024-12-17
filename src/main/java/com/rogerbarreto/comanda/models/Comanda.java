@@ -20,20 +20,20 @@ public class Comanda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "com_id", unique = true)
-    private long com_id;
+    private long comId;
 
     @ManyToOne
     @JoinColumn(name = "com_mes_id")
-    private Mesa com_mes_id;
+    private Mesa comMesId;
 
     @Column(name = "com_status", nullable = false)
-    private boolean com_status;
+    private boolean comStatus;
 
     @Column(name = "com_datahora", nullable = false)
-    private LocalDateTime com_datahora;
+    private LocalDateTime comDataHora;
 
 
-    @OneToMany(mappedBy = "ico_com_id")
+    @OneToMany(mappedBy = "icoComId")
     private ArrayList<ItemComanda> itemComandas = new ArrayList<>();
 
     public Comanda() {
@@ -41,47 +41,47 @@ public class Comanda {
 
 
     public Comanda(long com_id, Mesa com_mes_id, boolean com_status, LocalDateTime com_datahora) {
-        this.com_id = com_id;
-        this.com_mes_id = com_mes_id;
-        this.com_status = com_status;
-        this.com_datahora = com_datahora;
+        this.comId = com_id;
+        this.comMesId = com_mes_id;
+        this.comStatus = com_status;
+        this.comDataHora = com_datahora;
     }
 
 
     public long getCom_id() {
-        return this.com_id;
+        return this.comId;
     }
 
     public void setCom_id(long com_id) {
-        this.com_id = com_id;
+        this.comId = com_id;
     }
 
     public Mesa getCom_mes_id() {
-        return this.com_mes_id;
+        return this.comMesId;
     }
 
     public void setCom_mes_id(Mesa com_mes_id) {
-        this.com_mes_id = com_mes_id;
+        this.comMesId = com_mes_id;
     }
 
     public boolean isCom_status() {
-        return this.com_status;
+        return this.comStatus;
     }
 
     public boolean getCom_status() {
-        return this.com_status;
+        return this.comStatus;
     }
 
     public void setCom_status(boolean com_status) {
-        this.com_status = com_status;
+        this.comStatus = com_status;
     }
 
     public LocalDateTime getCom_datahora() {
-        return this.com_datahora;
+        return this.comDataHora;
     }
 
     public void setCom_datahora(LocalDateTime com_datahora) {
-        this.com_datahora = com_datahora;
+        this.comDataHora = com_datahora;
     }
 
 }

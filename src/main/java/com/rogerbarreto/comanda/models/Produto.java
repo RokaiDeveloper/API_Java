@@ -16,16 +16,16 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pro_id", unique = true)
-    private Long pro_id;
+    private Long proId;
 
     @Column(name = "pro_descricao", length = 255, nullable = false, unique = false)
-    private String pro_descricao;
+    private String proDescricao;
 
     @Column(name = "pro_und", length = 10, nullable = false)
-    private String pro_und;
+    private String proUnd;
 
     @Column(name = "pro_valor", nullable = false)
-    private double pro_valor;
+    private double proValor;
 
  
     public Produto() {
@@ -33,43 +33,43 @@ public class Produto {
 
 
     public Produto(Long pro_id, String pro_descricao, String pro_und, double pro_valor) {
-        this.pro_id = pro_id;
-        this.pro_descricao = pro_descricao;
-        this.pro_und = pro_und;
-        this.pro_valor = pro_valor;
+        this.proId = pro_id;
+        this.proDescricao = pro_descricao;
+        this.proUnd = pro_und;
+        this.proValor = pro_valor;
     }
 
 
     public Long getPro_id() {
-        return this.pro_id;
+        return this.proId;
     }
 
     public void setPro_id(Long pro_id) {
-        this.pro_id = pro_id;
+        this.proId = pro_id;
     }
 
     public String getPro_descricao() {
-        return this.pro_descricao;
+        return this.proDescricao;
     }
 
     public void setPro_descricao(String pro_descricao) {
-        this.pro_descricao = pro_descricao;
+        this.proDescricao = pro_descricao;
     }
 
     public String getPro_und() {
-        return this.pro_und;
+        return this.proUnd;
     }
 
     public void setPro_und(String pro_und) {
-        this.pro_und = pro_und;
+        this.proUnd = pro_und;
     }
 
     public double getPro_valor() {
-        return this.pro_valor;
+        return this.proValor;
     }
 
     public void setPro_valor(double pro_valor) {
-        this.pro_valor = pro_valor;
+        this.proValor = pro_valor;
     }
 
     

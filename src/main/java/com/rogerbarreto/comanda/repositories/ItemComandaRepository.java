@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface ItemComandaRepository extends JpaRepository<ItemComanda, Long>{
     
-    Optional<ItemComanda> findByIco_pro_codigo(long ico_pro_codigo);
+    Optional<ItemComanda> findByIcoProCodigo(long ico_pro_codigo);
 }

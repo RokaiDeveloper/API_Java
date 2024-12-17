@@ -17,7 +17,7 @@ public class ItemComandaService {
 
     public ItemComanda findByIcoProCodigo(Long pro_codigo)
     {
-        Optional<ItemComanda> comanda = this.itemComandaRepository.findByIco_pro_codigo(pro_codigo);
+        Optional<ItemComanda> comanda = this.itemComandaRepository.findByIcoProCodigo(pro_codigo);
         return comanda.orElseThrow(() -> new RuntimeException("Não foi possivel encontrar o item da comanda pelo código de produto : " + pro_codigo));
     }
 
