@@ -26,7 +26,7 @@ public class Mesa {
     @Column(name = "mes_status", nullable = false)
     private boolean mesStatus;
 
-    @OneToMany(mappedBy = "com_mes_id")
+    @OneToMany(mappedBy = "comMesId")
     private ArrayList<Comanda> comandas = new ArrayList<>();
 
     public Mesa() {
