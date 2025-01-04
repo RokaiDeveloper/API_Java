@@ -19,7 +19,7 @@ import com.rogerbarreto.comanda.models.Comanda;
 import com.rogerbarreto.comanda.services.ComandaService;
 
 @RestController
-@RequestMapping("/Comanda")
+@RequestMapping("/comanda")
 @Validated
 public class ComandaController {
     
